@@ -1,1 +1,8 @@
-/build
+.gradle
+.idea
+build
+local.properties
+*.iml
+*.apk
+output.json
+/app/maindexlist.txt
