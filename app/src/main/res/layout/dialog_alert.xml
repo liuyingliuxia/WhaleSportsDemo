@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llAlertDialog"
+    android:layout_width="500dp"
+    android:layout_height="300dp"
+    android:background="@drawable/alert_dialog_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvAlertTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp7"
+        android:text="@string/alert_settings"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp7"
+        android:background="@color/tab_grey" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <TextView
+            android:id="@+id/tvSubAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="@string/alert_settings"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintEnd_toEndOf="@id/cbOne"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cbOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/selector_switch"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvSubAlert"
+            app:layout_constraintTop_toTopOf="@id/tvSubAlert" />
+
+        <TextView
+            android:id="@+id/tvGameStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp35"
+            android:text="@string/game_start"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintEnd_toEndOf="@id/cbOne"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tvSubAlert"
+            app:layout_constraintTop_toTopOf="@id/cbOne" />
+
+        <CheckBox
+            android:id="@+id/cbTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_switch"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="@id/cbOne"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/tvGameStart"
+            app:layout_constraintTop_toTopOf="@id/tvGameStart" />
+
+
+        <TextView
+            android:id="@+id/tvRealTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/real_time_score"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintEnd_toEndOf="@id/cbOne"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tvSubAlert"
+            app:layout_constraintTop_toTopOf="@id/tvGameStart" />
+
+        <CheckBox
+            android:id="@+id/cbThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_switch"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="@id/cbTwo"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/tvGameStart"
+            app:layout_constraintTop_toTopOf="@id/tvRealTime" />
+
+        <TextView
+            android:id="@+id/tvGameResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/game_result"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintEnd_toEndOf="@id/cbThree"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tvSubAlert"
+            app:layout_constraintTop_toTopOf="@id/cbThree" />
+
+        <CheckBox
+            android:id="@+id/cbFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_switch"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="@id/cbThree"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/tvGameStart"
+            app:layout_constraintTop_toTopOf="@id/tvGameResult" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_08"
+        android:layout_marginTop="@dimen/dp7"
+        android:background="@color/tab_grey" />
+
+    <TextView
+        android:id="@+id/tvOk"
+        android:layout_width="@dimen/dp70"
+        android:layout_height="@dimen/dp20"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp5"
+        android:background="@drawable/selector_button_click"
+        android:text="@string/ok"
+        android:textColor="@color/white" />
+</LinearLayout>
