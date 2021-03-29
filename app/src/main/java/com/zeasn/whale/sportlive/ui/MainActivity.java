@@ -7,14 +7,17 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.lolinico.technical.open.parent.BaseParentActivity;
+import com.lolinico.technical.open.parent.BasePresenter;
 import com.zeasn.whale.sportlive.R;
+import com.zeasn.whale.sportlive.presenter.AllPresenter;
 import com.zeasn.whale.sportlive.ui.dialog.AlertDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseParentActivity {
 
     @BindView(R.id.ivSetting)
     ImageView ivSetting;
@@ -28,10 +31,23 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog alertDialog;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    public BasePresenter bindPresenter() {
+        return new AllPresenter(this);
+    }
+
+    @Override
+    public int getContentId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void requestDataAction() {
+
     }
 
     public void initDialog() {

@@ -4,7 +4,6 @@ apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.zeasn.whale.sportlive"
@@ -47,5 +46,5 @@ dependencies {
     implementation 'com.google.android.exoplayer:extension-leanback:2.6.1'
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
-
+    implementation 'com.zeasn:lolinico:1.0.156'
 }

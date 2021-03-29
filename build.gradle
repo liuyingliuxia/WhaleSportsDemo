@@ -3,6 +3,9 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
@@ -17,6 +20,8 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url MAVEN_REPO_RELEASE_URL }
+        maven { url "https://jitpack.io" }
     }
 }
 
