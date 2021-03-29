@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="tab_grey">#363636</color>
+    <color name="tab_grey">#28252F</color>
     <color name="check_grey">#666666</color>
-    <color name="main_black">#000000</color>
+    <color name="main_black">#3C3841</color>
     <color name="item_background">#BCBCBC</color>
     <color name="dialog_background">#FFFFFF</color>
     <color name="selected_blue">#169BD5</color>

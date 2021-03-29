@@ -17,19 +17,23 @@
 
         <ImageView
             android:id="@+id/ivHome"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp75"
-            android:background="@drawable/selector_tab_home" />
+            android:background="@drawable/selector_tab_home"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
         <ImageView
             android:id="@+id/ivSetting"
-            android:layout_width="@dimen/dp_50"
-            android:layout_height="@dimen/dp_50"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/dp_30"
-            android:background="@drawable/selector_tab_setting" />
+            android:background="@drawable/selector_tab_setting"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
 
 
     </LinearLayout>
@@ -38,7 +42,7 @@
         android:id="@+id/llMain"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="9"
+        android:layout_weight="12"
         android:background="@color/main_black"
         android:orientation="vertical">
 
@@ -50,7 +54,7 @@
             android:layout_marginTop="@dimen/dp20"
             android:text="@string/main_title"
             android:textColor="@color/white"
-            android:textSize="50sp"
+            android:textSize="@dimen/sp_40"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,25 +66,31 @@
             android:layout_marginTop="@dimen/dp25"
             android:text="@string/main_subtitle"
             android:textColor="@color/white"
-            android:textSize="35sp"
+            android:textSize="@dimen/sp_30"
             app:layout_constraintStart_toEndOf="@id/tvMainTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tbSort"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp30"
-            app:layout_constraintStart_toStartOf="@id/tvMainTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvMainTitle" />
+        <!--        <com.google.android.material.tabs.TabLayout-->
+        <!--            android:id="@+id/tbSort"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dp30"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/tvMainTitle"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/tvMainTitle" />-->
 
         <FrameLayout
             android:id="@+id/flContainer"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp20"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tvMainTitle"
-            app:layout_constraintTop_toBottomOf="@id/tbSort" />
+            app:layout_constraintTop_toBottomOf="@id/tvSubTitle">
+
+            <include
+                layout="@layout/dialog_add_favorite" />
+
+        </FrameLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

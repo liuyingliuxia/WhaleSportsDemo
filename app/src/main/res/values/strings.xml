@@ -19,4 +19,9 @@
     <string name="real_time_score">Real-time Score</string>
     <string name="game_result">Game Result</string>
     <string name="ok">OK</string>
+    <string name="add_your_favorite">Add your favorite team，never miss any schedule and updates ！</string>
+    <string name="add_favorite">Add Favorite</string>
+
+    <string name="select_sports">Select your favorite sports</string>
+
 </resources>

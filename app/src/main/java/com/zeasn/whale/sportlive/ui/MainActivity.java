@@ -3,14 +3,18 @@ package com.zeasn.whale.sportlive.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.android.material.tabs.TabLayout;
 import com.lolinico.technical.open.parent.BaseParentActivity;
 import com.lolinico.technical.open.parent.BasePresenter;
 import com.zeasn.whale.sportlive.R;
 import com.zeasn.whale.sportlive.presenter.AllPresenter;
+import com.zeasn.whale.sportlive.ui.dialog.AddTeamDialog;
 import com.zeasn.whale.sportlive.ui.dialog.AlertDialog;
 
 import butterknife.BindView;
@@ -18,15 +22,21 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseParentActivity {
+    private static final int SHOW_ADD_SPORT_DIALOG = 0;
+    private static final int SHOW_ALERT_DIALOG = 1;
 
     @BindView(R.id.ivSetting)
     ImageView ivSetting;
     @BindView(R.id.ivHome)
     ImageView ivHome;
-    @BindView(R.id.tbSort)
-    TabLayout tbSort;
+    //    @BindView(R.id.tbSort)
+//    TabLayout tbSort;
     @BindView(R.id.flContainer)
     FrameLayout flContainer;
+    @BindView(R.id.btnOK)
+    Button btnOk;
+    @BindView(R.id.llAddTeam)
+    LinearLayout llAddTeam;
 
     AlertDialog alertDialog;
 
@@ -42,6 +52,8 @@ public class MainActivity extends BaseParentActivity {
 
     @Override
     public void initView() {
+        initDialog(SHOW_ADD_SPORT_DIALOG);
+        btnOk.setFocusable(true);
 
     }
 
@@ -50,10 +62,12 @@ public class MainActivity extends BaseParentActivity {
 
     }
 
-    public void initDialog() {
-        if (null == alertDialog) {
+    public void initDialog(int dialogNum) {
+        if (dialogNum == SHOW_ALERT_DIALOG && null == alertDialog)
             alertDialog = new AlertDialog(this);
-        }
+//        else if (dialogNum == SHOW_ADD_SPORT_DIALOG && null == addTeamDialog)
+//            addTeamDialog = new AddTeamDialog(this);
+
     }
 
     @Override
@@ -64,8 +78,14 @@ public class MainActivity extends BaseParentActivity {
     }
 
     @OnClick(R.id.ivSetting)
-    public void setIvSettingClicked(){
-        initDialog();
+    public void setIvSettingClicked() {
+        initDialog(SHOW_ALERT_DIALOG);
         alertDialog.doShowAction();
     }
+
+    @OnClick(R.id.btnOK)
+    public void setBtnOkClicked() {
+        llAddTeam.setVisibility(View.INVISIBLE);
+    }
+
 }
