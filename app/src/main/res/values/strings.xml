@@ -3,6 +3,8 @@
     <string name="main_title">Whale Sports </string>
     <string name="main_subtitle">- Live &amp; Upcoming</string>
     <string name="tab_all">All</string>
+    <string name="l_home">Home</string>
+    <string name="l_setting">Settings</string>
     <string name="tab_football">Football</string>
     <string name="tab_basketball">Basketball</string>
     <string name="time1">Tomorrow 2:00 AM</string>
@@ -21,7 +23,8 @@
     <string name="ok">OK</string>
     <string name="add_your_favorite">Add your favorite team，never miss any schedule and updates ！</string>
     <string name="add_favorite">Add Favorite</string>
-
     <string name="select_sports">Select your favorite sports</string>
-
+    <string name="select_league">Select your favorite league</string>
+    <string name="select_team">Select your favorite team</string>
+    <string name="done">Done</string>
 </resources>

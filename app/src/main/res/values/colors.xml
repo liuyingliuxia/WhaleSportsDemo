@@ -14,4 +14,6 @@
     <color name="item_background">#BCBCBC</color>
     <color name="dialog_background">#FFFFFF</color>
     <color name="selected_blue">#169BD5</color>
+    <color name="home_tab_grey">#98969A</color>
+    <color name="checked_border">#2DFBEC</color>
 </resources>

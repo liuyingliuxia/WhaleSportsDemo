@@ -3,6 +3,7 @@ package com.zeasn.whale.sportlive.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -29,14 +30,14 @@ public class MainActivity extends BaseParentActivity {
     ImageView ivSetting;
     @BindView(R.id.ivHome)
     ImageView ivHome;
-    //    @BindView(R.id.tbSort)
-//    TabLayout tbSort;
     @BindView(R.id.flContainer)
     FrameLayout flContainer;
     @BindView(R.id.btnOK)
     Button btnOk;
     @BindView(R.id.llAddTeam)
     LinearLayout llAddTeam;
+    @BindView(R.id.llTab)
+    LinearLayout llTab;
 
     AlertDialog alertDialog;
 
@@ -53,8 +54,15 @@ public class MainActivity extends BaseParentActivity {
     @Override
     public void initView() {
         initDialog(SHOW_ADD_SPORT_DIALOG);
-        btnOk.setFocusable(true);
-
+        llTab.setFocusable(true);
+        llTab.setFocusableInTouchMode(true);
+        llTab.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) {
+                llTab.setWeightSum(1.5f);
+            }else {
+                llTab.setWeightSum(1.0f);
+            }
+        });
     }
 
     @Override
@@ -88,4 +96,15 @@ public class MainActivity extends BaseParentActivity {
         llAddTeam.setVisibility(View.INVISIBLE);
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                ivHome.findFocus();
+                break;
+        }
+
+
+        return super.onKeyDown(keyCode, event);
+    }
 }
