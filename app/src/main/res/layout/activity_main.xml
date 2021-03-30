@@ -7,63 +7,11 @@
     android:orientation="horizontal"
     tools:context=".ui.MainActivity">
 
-
     <include layout="@layout/main_left" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/llMain"
+    <FrameLayout
+        android:id="@+id/flHomeContainer"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="12"
-        android:background="@color/main_black"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvMainTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp10"
-            android:layout_marginTop="@dimen/dp20"
-            android:text="@string/main_title"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_40"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvSubTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dp10"
-            android:layout_marginTop="@dimen/dp25"
-            android:text="@string/main_subtitle"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_30"
-            app:layout_constraintStart_toEndOf="@id/tvMainTitle"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--        <com.google.android.material.tabs.TabLayout-->
-        <!--            android:id="@+id/tbSort"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="@dimen/dp30"-->
-        <!--            app:layout_constraintStart_toStartOf="@id/tvMainTitle"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/tvMainTitle" />-->
-
-        <FrameLayout
-            android:id="@+id/flContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvMainTitle"
-            app:layout_constraintTop_toBottomOf="@id/tvSubTitle">
-
-            <include layout="@layout/dialog_add_favorite" />
-
-        </FrameLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        android:layout_weight="12" />
 </LinearLayout>

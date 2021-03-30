@@ -20,6 +20,9 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * @deprecated
+ */
 public class AlertDialog extends Dialog {
     @BindView(R.id.tvOk)
     TextView tvOk;

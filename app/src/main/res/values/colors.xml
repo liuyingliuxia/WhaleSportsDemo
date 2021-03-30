@@ -6,6 +6,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="half_black">#80000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="tab_grey">#28252F</color>
@@ -16,4 +17,5 @@
     <color name="selected_blue">#169BD5</color>
     <color name="home_tab_grey">#98969A</color>
     <color name="checked_border">#2DFBEC</color>
+    <color name="half_white">#805A595E</color>
 </resources>

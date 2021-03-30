@@ -2,6 +2,9 @@ package com.zeasn.whale.sportlive.bean;
 
 import java.io.Serializable;
 
+/**
+ * 比赛实体
+ */
 public class GameBean implements Serializable {
 
     int id;
