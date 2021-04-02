@@ -7,9 +7,30 @@
     </array>
 
     <string-array name="sports_string">
-        <item> @strings/ </item>
-        <item> @string/move_apps </item>
+        <item> @string/tab_football </item>
+        <item> @string/tab_basketball </item>
+        <item> @string/tab_tennis </item>
     </string-array>
+
+
+    <string-array name="league_string">
+        <item> @string/league_premier </item>
+        <item> @string/league_bundesliga </item>
+        <item> @string/league_laliga </item>
+        <item> @string/league_serie </item>
+        <item> @string/league_ligue_1 </item>
+    </string-array>
+
+    <string-array name="team_string">
+        <item> @string/team_fulham </item>
+        <item> @string/team_arsenal </item>
+        <item> @string/team_sheffied_united </item>
+        <item> @string/team_southampton </item>
+        <item> @string/team_burnley </item>
+        <item> @string/team_chelsea </item>
+        <item> @string/team_liverpool </item>
+    </string-array>
+
 
     <array name="league_sort">
         <item>@mipmap/league_ic_premier</item>

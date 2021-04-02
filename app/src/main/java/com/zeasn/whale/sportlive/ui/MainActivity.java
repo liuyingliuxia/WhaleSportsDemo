@@ -1,6 +1,8 @@
 package com.zeasn.whale.sportlive.ui;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.leanback.widget.HorizontalGridView;
 
 import android.os.Bundle;
@@ -11,43 +13,41 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.google.android.material.tabs.TabLayout;
-import com.lolinico.technical.open.parent.BaseParentActivity;
-import com.lolinico.technical.open.parent.BasePresenter;
 import com.zeasn.whale.sportlive.R;
-import com.zeasn.whale.sportlive.presenter.AllPresenter;
-import com.zeasn.whale.sportlive.ui.dialog.AddTeamDialog;
-import com.zeasn.whale.sportlive.ui.dialog.AlertDialog;
+import com.zeasn.whale.sportlive.ui.fragment.HomeFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseParentActivity {
+public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.ivSetting)
     ImageView ivSetting;
     @BindView(R.id.ivHome)
     ImageView ivHome;//需要有三种状态
 
-
-    @Override
-    public BasePresenter bindPresenter() {
-        return new AllPresenter(this);
+    public MainActivity() {
+        super(R.layout.activity_main);
     }
 
-    @Override
-    public int getContentId() {
-        return R.layout.activity_main;
-    }
 
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.flHomeContainer,new HomeFragment(), null)
+                    .commit();
+        }
+    }
+
     public void initView() {
-        
+
     }
 
 
-    @Override
     public void requestDataAction() {
 
     }
@@ -55,13 +55,6 @@ public class MainActivity extends BaseParentActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        switch (keyCode) {
-//            case KeyEvent.KEYCODE_DPAD_RIGHT:
-//                ivHome.findFocus();
-//                break;
-//        }
-
-
         return super.onKeyDown(keyCode, event);
     }
 }

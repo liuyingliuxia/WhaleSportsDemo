@@ -9,9 +9,11 @@
 
     <include layout="@layout/main_left" />
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/flHomeContainer"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:name="com.zeasn.whale.sportlive.ui.fragment.HomeFragment"
+        android:tag="home_tag"
         android:layout_weight="12" />
 </LinearLayout>

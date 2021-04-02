@@ -36,6 +36,7 @@
     <dimen name="sp_25">33.33sp</dimen>
     <dimen name="sp_27">36.00sp</dimen>
     <dimen name="sp_30">40.00sp</dimen>
+    <dimen name="sp_40">53.32sp</dimen>
 
     <dimen name="px1">1dp</dimen>
     <dimen name="px2">2dp</dimen>
