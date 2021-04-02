@@ -43,7 +43,7 @@ public class MainActivity extends BaseParentActivity {
 
     @Override
     public void initView() {
-
+        
     }
 
 
