@@ -1,21 +1,40 @@
 <resources>
     <string name="app_name">Sports+</string>
-    <string name="main_title">Whale Sports </string>
-    <string name="main_subtitle">- Live &amp; Upcoming</string>
+    <string name="main_title"> Sports+</string>
+    <string name="main_subtitle"> - Live &amp; Upcoming</string>
     <string name="tab_all">All</string>
     <string name="l_home">Home</string>
     <string name="l_setting">Settings</string>
+
     <string name="tab_football">Football</string>
     <string name="tab_basketball">Basketball</string>
+    <string name="tab_tennis">Tennis</string>
+
     <string name="time1">Tomorrow 2:00 AM</string>
     <string name="time2">Sat,Mar 6, 8:30 PM</string>
     <string name="time3">Sat,Mar 6, 11:30 AM</string>
-    <string name="ball_team1">Fulham</string>
-    <string name="ball_team2">Tottenham</string>
-    <string name="ball_team3">Burnley</string>
-    <string name="ball_team4">Aesenal</string>
-    <string name="ball_team5">Sheffield United</string>
-    <string name="ball_team6">Southampton</string>
+    
+    <string name="ball_fulham">Fulham</string>
+    <string name="ball_tottenham">Tottenham</string>
+    <string name="ball_burnley">Burnley</string>
+    <string name="ball_aesenal">Aesenal</string>
+    <string name="ball_sheffield">Sheffield United</string>
+    <string name="ball_southampton">Southampton</string>
+
+    <string name="league_premier">Premier League</string>
+    <string name="league_bundesliga">Bundesliga</string>
+    <string name="league_laliga">LaLiga</string>
+    <string name="league_serie">Serie A</string>
+    <string name="league_ligue_1">Ligue 1</string>
+
+    <string name="team_fulham">Fulham</string>
+    <string name="team_arsenal">Arsenal</string>
+    <string name="team_sheffied_united">Sheffied United</string>
+    <string name="team_southampton">Southampton</string>
+    <string name="team_burnley">Burnley</string>
+    <string name="team_chelsea">Chelsea</string>
+    <string name="team_liverpool">Liverpool</string>
+
     <string name="alert_settings">Alert Settings</string>
     <string name="game_start">Game Start</string>
     <string name="real_time_score">Real-time Score</string>

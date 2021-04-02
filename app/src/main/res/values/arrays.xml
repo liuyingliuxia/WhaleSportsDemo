@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sports_sort">
+        <item>@mipmap/football</item>
+        <item>@mipmap/sort_basketball</item>
+        <item>@mipmap/sort_tennis</item>
+    </array>
+
+    <string-array name="sports_string">
+        <item> @strings/ </item>
+        <item> @string/move_apps </item>
+    </string-array>
+
+    <array name="league_sort">
+        <item>@mipmap/league_ic_premier</item>
+        <item>@mipmap/league_ic_bundesliga</item>
+        <item>@mipmap/league_ic_laliga</item>
+        <item>@mipmap/league_ic_serie_a</item>
+        <item>@mipmap/league_ic_ligue</item>
+    </array>
+
+    <array name="team_sort">
+        <item>@mipmap/team_fulham</item>
+        <item>@mipmap/team_arsenal</item>
+        <item>@mipmap/team_sheffield_united</item>
+        <item>@mipmap/team_southampton</item>
+        <item>@mipmap/team_burnley</item>
+        <item>@mipmap/team_chelsea</item>
+        <item>@mipmap/team_liverpool</item>
+    </array>
+
+</resources>
