@@ -22,7 +22,7 @@
         <item name="colorAccent">@color/purple_500</item>
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/main_bg</item>
     </style>
 
 </resources>

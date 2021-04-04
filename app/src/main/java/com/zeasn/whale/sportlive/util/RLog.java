@@ -6,7 +6,7 @@ import android.util.Log;
  * Created by Rico on 2017/5/15.
  */
 public class RLog {
-    public static String TAG = "lolinico";
+    public static String TAG = "Sports+ : ===";
     public static boolean isTag = true;
 
     public static void v(String text) {

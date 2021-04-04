@@ -1,24 +1,22 @@
 package com.zeasn.whale.sportlive.ui.fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.leanback.widget.HorizontalGridView;
 
 import com.zeasn.whale.sportlive.R;
-import com.zeasn.whale.sportlive.adapter.SportStubAdapter;
-import com.zeasn.whale.sportlive.ui.dialog.AlertDialog;
+import com.zeasn.whale.sportlive.R2;
+import com.zeasn.whale.sportlive.util.RLog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * Author:Miracle.Lin
@@ -27,52 +25,47 @@ import butterknife.OnClick;
  * Descripe:
  */
 public class HomeFragment extends Fragment {
-    @BindView(R.id.flContainer)
-    FrameLayout flContainer;
-    @BindView(R.id.btnOK)
-    Button btnOk;
-    @BindView(R.id.llAddTeam)
+    @BindView(R2.id.tvAdd)
+    TextView tvAdd;
+    @BindView(R2.id.llAddTeam)
     LinearLayout llAddTeam;
-    @BindView(R.id.llTab)
-    LinearLayout llTab;
-    @BindView(R.id.hgSport)
-    HorizontalGridView hgSport;
+
+    Unbinder unBinder;
 
     public HomeFragment() {
         super(R.layout.fragment_home);
+
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-//        initView(view);
+        unBinder = ButterKnife.bind(this , view);
+        initView();
 
     }
 
-    public void initView(View view) {
-        llTab.setFocusable(true);
-        llTab.setFocusableInTouchMode(true);
-        llTab.setOnFocusChangeListener((v, hasFocus) -> {
-            if (hasFocus) {
-                llTab.setWeightSum(1.5f);
-            } else {
-                llTab.setWeightSum(1.0f);
-            }
-        });
-
-        hgSport.setNumRows(1);
-        hgSport.setAdapter(new SportStubAdapter());
+    public void initView() {
+        tvAdd.findFocus();
 
 
     }
 
 
-    @OnClick(R.id.btnOK)
+    @OnClick(R.id.tvAdd)
     public void setBtnOkClicked() {
+        RLog.v(" you click add 'favorite button' ");
         llAddTeam.setVisibility(View.INVISIBLE);
+        this.requireActivity().getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(R.id.flHomeContainer, new SelectFragment(), "Sport")
+                .commit();
     }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unBinder.unbind();
+    }
 }

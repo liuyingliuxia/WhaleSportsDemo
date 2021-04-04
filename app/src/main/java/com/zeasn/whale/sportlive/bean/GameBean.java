@@ -5,10 +5,8 @@ import java.io.Serializable;
 /**
  * 比赛实体
  */
-public class GameBean implements Serializable {
+public class GameBean extends BaseBean implements Serializable {
 
-    int id;
-    String gName;
     String lName;
     int round;
     int status;

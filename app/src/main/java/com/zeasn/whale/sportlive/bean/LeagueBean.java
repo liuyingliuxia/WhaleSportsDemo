@@ -8,8 +8,10 @@ import java.io.Serializable;
  * Email:miracle.lin@zeasn.com
  * Descripe:联盟实体
  */
-public class LeagueBean implements Serializable {
-    int id;
-    String leaName;
-    boolean isSelected;
+public class LeagueBean  extends BaseBean implements Serializable {
+
+    public LeagueBean(int mResId , String mLeaName){
+        logoResId = mResId;
+        titleName = mLeaName;
+    }
 }

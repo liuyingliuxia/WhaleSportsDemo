@@ -1,8 +1,11 @@
 package com.zeasn.whale.sportlive;
 
-import android.app.Application;
+import android.annotation.SuppressLint;
 
-public class SportApplication extends Application {
+import com.lolinico.technical.open.parent.BaseApplication;
+
+public class SportApplication extends BaseApplication {
+    @SuppressLint("StaticFieldLeak")
     public static SportApplication instance;
 
     public static SportApplication getInstance() {

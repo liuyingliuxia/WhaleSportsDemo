@@ -1,30 +1,24 @@
 package com.zeasn.whale.sportlive.ui;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.leanback.widget.HorizontalGridView;
-
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.zeasn.whale.sportlive.R;
+import com.zeasn.whale.sportlive.R2;
 import com.zeasn.whale.sportlive.ui.fragment.HomeFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.ivSetting)
+    @BindView(R2.id.ivSetting)
     ImageView ivSetting;
-    @BindView(R.id.ivHome)
+    @BindView(R2.id.ivHome)
     ImageView ivHome;//需要有三种状态
 
     public MainActivity() {
@@ -35,15 +29,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ButterKnife.bind(this);
         if (savedInstanceState != null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.flHomeContainer,new HomeFragment(), null)
+                    .add(R.id.flHomeContainer, new HomeFragment(), "Home")
                     .commit();
         }
     }
 
     public void initView() {
+//        llTab.setFocusable(true);
+//        llTab.setFocusableInTouchMode(true);
+//        llTab.setOnFocusChangeListener((v, hasFocus) -> {
+//            if (hasFocus) {
+//                llTab.setWeightSum(1.5f);
+//            } else {
+//                llTab.setWeightSum(1.0f);
+//            }
+//        });
 
     }
 

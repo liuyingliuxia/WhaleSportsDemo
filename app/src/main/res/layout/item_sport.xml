@@ -2,16 +2,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvSports"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/selector_checked_border"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
-    app:cardCornerRadius="@dimen/dp_10">
+    app:cardCornerRadius="@dimen/dp_10"
+    app:cardElevation="@dimen/dp_20">
 
     <ImageView
         android:id="@+id/ivSport"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:src="@mipmap/football" />
 
     <TextView
         android:id="@+id/tvSportName"
@@ -20,9 +21,26 @@
         android:layout_gravity="bottom"
         android:background="@color/half_black"
         android:gravity="center"
-        android:paddingTop="@dimen/dp_20"
-        android:paddingBottom="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_5"
+        android:text="@string/tab_football"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_50" />
+        android:textSize="@dimen/sp_20" />
 
+    <ImageView
+        android:id="@+id/ivNike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/nike_bg"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_nike"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:id="@+id/flFocusBorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="@drawable/checked_border"/>
 </androidx.cardview.widget.CardView>

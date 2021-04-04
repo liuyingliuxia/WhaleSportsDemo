@@ -9,11 +9,47 @@
 
     <include layout="@layout/main_left" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/flHomeContainer"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:name="com.zeasn.whale.sportlive.ui.fragment.HomeFragment"
-        android:tag="home_tag"
-        android:layout_weight="12" />
+        android:layout_weight="12"
+        android:paddingStart="@dimen/dp_20"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="@string/main_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_40"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp25"
+            android:text="@string/main_subtitle"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_30"
+            app:layout_constraintStart_toEndOf="@id/tvMainTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/flHomeContainer"
+            android:name="com.zeasn.whale.sportlive.ui.fragment.HomeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

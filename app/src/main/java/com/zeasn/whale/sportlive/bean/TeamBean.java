@@ -5,10 +5,15 @@ import java.io.Serializable;
 /**
  * 队伍实体
  */
-public class TeamBean implements Serializable {
-    String tNm;//队名
-    String tIcon;
+public class TeamBean extends BaseBean implements Serializable {
+
     int gtHome;//是否主队
     int gtScore;
     int gtWin;
+
+    public TeamBean(int teamLogoId , String teamName){
+        logoResId = teamLogoId;
+        titleName = teamName;
+    }
+
 }
