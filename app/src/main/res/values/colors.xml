@@ -23,4 +23,5 @@
     <color name="transparent">#00000000</color>
     <color name="live_red">#FF60A7</color>
     <color name="game_title_bg">#2A2836</color>
+    <color name="text_sub_title">#817E93</color>
 </resources>

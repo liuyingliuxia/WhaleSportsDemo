@@ -39,16 +39,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initView() {
-//        llTab.setFocusable(true);
-//        llTab.setFocusableInTouchMode(true);
-//        llTab.setOnFocusChangeListener((v, hasFocus) -> {
-//            if (hasFocus) {
-//                llTab.setWeightSum(1.5f);
-//            } else {
-//                llTab.setWeightSum(1.0f);
-//            }
-//        });
-
     }
 
 

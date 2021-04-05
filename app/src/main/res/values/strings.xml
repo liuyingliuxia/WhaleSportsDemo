@@ -2,18 +2,21 @@
     <string name="app_name">Sports+</string>
     <string name="main_title"> Sports+</string>
     <string name="main_subtitle"> - Live &amp; Upcoming</string>
-    <string name="tab_all">All</string>
+
     <string name="l_home">Home</string>
     <string name="l_setting">Settings</string>
 
+    <string name="tab_all">All</string>
     <string name="tab_football">Football</string>
     <string name="tab_basketball">Basketball</string>
     <string name="tab_tennis">Tennis</string>
 
+    <string name="live_score">23\'</string>
     <string name="time1">Tomorrow 2:00 AM</string>
     <string name="time2">Sat,Mar 6, 8:30 PM</string>
     <string name="time3">Sat,Mar 6, 11:30 AM</string>
-    
+    <string name="game_name">Football,Premier League,Round 38</string>
+
     <string name="ball_fulham">Fulham</string>
     <string name="ball_tottenham">Tottenham</string>
     <string name="ball_burnley">Burnley</string>
@@ -34,6 +37,8 @@
     <string name="team_burnley">Burnley</string>
     <string name="team_chelsea">Chelsea</string>
     <string name="team_liverpool">Liverpool</string>
+    <string name="team_crystal">Crystal Palace F…</string>
+
 
     <string name="alert_settings">Alert Settings</string>
     <string name="game_start">Game Start</string>

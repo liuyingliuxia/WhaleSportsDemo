@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvGame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:cardCornerRadius="@dimen/dp_10"
+    app:cardElevation="@dimen/dp_20">
+
+    <LinearLayout
+        android:id="@+id/llGame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/game_title_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2">
+
+            <TextView
+                android:id="@+id/tvLive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingStart="@dimen/dp_10"
+                android:text="@string/live"
+                android:textColor="@color/live_red"
+                android:textSize="@dimen/sp_30"
+                app:drawableLeftCompat="@drawable/ic_point" />
+
+            <TextView
+                android:id="@+id/tvTimeOrScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <ImageView
+                android:id="@+id/ivAlert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nike_bg"
+                android:gravity="end"
+                android:visibility="invisible"
+                android:src="@mipmap/remind" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conTeamAB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/team_bg">
+
+            <ImageView
+                android:id="@+id/ivTeamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/team_fulham"
+                app:layout_constraintEnd_toStartOf="@id/tvVS"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvVS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vs"
+                android:textSize="@dimen/sp_50"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/ivTeamB"
+                app:layout_constraintStart_toEndOf="@id/ivTeamA"
+                app:layout_constraintBottom_toTopOf="@id/tvTeamA"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/ivTeamB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/tottenham"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivTeamA"
+                app:layout_constraintVertical_bias="0.6"
+                app:layout_constraintStart_toEndOf="@id/tvVS"/>
+
+
+            <TextView
+                android:id="@+id/tvTeamA"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="wrap_content"
+                android:text="@string/ball_fulham"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@drawable/game_name_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivTeamA"
+                app:layout_constraintEnd_toStartOf="@id/tvVS"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvTeamB"
+                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp_200"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="@string/ball_tottenham"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/white"
+                android:background="@drawable/game_name_bg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivTeamB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvVS"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flFocusBorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/checked_border"
+        android:visibility="invisible" />
+
+</androidx.cardview.widget.CardView>

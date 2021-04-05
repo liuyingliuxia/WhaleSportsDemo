@@ -10,6 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_200"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20"
         android:background="@drawable/selector_left_tab_llbg"
         android:orientation="horizontal">
 
@@ -18,7 +20,6 @@
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
             android:layout_gravity="center"
-            android:layout_marginStart="@dimen/dp_20"
             android:background="@drawable/selector_tab_home"
             android:focusable="true"
             android:focusableInTouchMode="true" />
@@ -29,8 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/dp_5"
-            android:layout_marginEnd="@dimen/dp_20"
             android:text="@string/l_home"
+            android:visibility="gone"
             android:textColor="@color/home_tab_grey" />
 
     </LinearLayout>
@@ -39,6 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20"
         android:background="@drawable/selector_left_tab_llbg"
         android:orientation="horizontal">
 
@@ -47,7 +50,6 @@
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
             android:layout_gravity="center"
-            android:layout_marginStart="@dimen/dp_20"
             android:background="@drawable/selector_tab_setting"
             android:focusable="true"
             android:focusableInTouchMode="true" />
@@ -58,9 +60,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/dp_5"
-            android:layout_marginEnd="@dimen/dp_20"
             android:text="@string/l_setting"
-            android:textColor="@color/home_tab_grey" />
+            android:textColor="@color/home_tab_grey"
+            android:visibility="gone" />
 
     </LinearLayout>
 

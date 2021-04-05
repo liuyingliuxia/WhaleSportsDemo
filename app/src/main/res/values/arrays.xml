@@ -50,4 +50,10 @@
         <item>@mipmap/team_liverpool</item>
     </array>
 
+    <array name="tab_game">
+        <item>@string/tab_all</item>
+        <item>@string/tab_football</item>
+        <item>@string/tab_basketball</item>
+    </array>
+
 </resources>
