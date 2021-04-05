@@ -47,4 +47,6 @@
     <string name="select_team">Select your favorite team</string>
     <string name="done">Done</string>
     <string name="next">Next</string>
+    <string name="live">Live</string>
+    <string name="vs">VS</string>
 </resources>

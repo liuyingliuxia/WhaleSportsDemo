@@ -59,6 +59,8 @@ public class SelectFragment extends Fragment {
         assert this.getTag() != null;
         switch (this.getTag()) {
             case "Sport":
+                tvSelectWord.setText(R.string.select_sports);
+                tvNextOrDone.setText(R.string.next);
                 String[] mSports = SportApplication.getInstance().getResources().getStringArray(R.array.sports_string);
                 int[] resIntSport = AppUtil.getDrawables(R.array.sports_sort);
 
@@ -71,6 +73,8 @@ public class SelectFragment extends Fragment {
                 hgSelectItem.setAdapter(new SportStubAdapter(baseBeanList, TYPE_SELECT_SPORT));
                 break;
             case "League": {
+                tvSelectWord.setText(R.string.select_league);
+                tvNextOrDone.setText(R.string.next);
                 String[] mLeagueStr = SportApplication.getInstance().getResources().getStringArray(R.array.league_string);
                 int[] resIntLeague = AppUtil.getDrawables(R.array.league_sort);
 
@@ -84,6 +88,8 @@ public class SelectFragment extends Fragment {
                 break;
             }
             case "Team": {
+                tvSelectWord.setText(R.string.select_team);
+                tvNextOrDone.setText(R.string.done);
                 String[] mLeagueStr = SportApplication.getInstance().getResources().getStringArray(R.array.team_string);
                 int[] resIntLeague = AppUtil.getDrawables(R.array.team_sort);
 
@@ -122,7 +128,7 @@ public class SelectFragment extends Fragment {
         else if (this.getTag().equals("Team"))
             this.requireActivity().getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .replace(R.id.flHomeContainer, new SelectFragment(), "Game") //下一个
+                    .replace(R.id.flHomeContainer, new GameFragment(), "Game") //下一个
                     .commit();
     }
 }

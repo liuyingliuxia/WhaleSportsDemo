@@ -19,5 +19,8 @@
     <color name="checked_border">#2DFBEC</color>
     <color name="half_white">#805A595E</color>
     <color name="main_bg">#3E3B43</color>
+    <color name="team_bg">#1C1929</color>
     <color name="transparent">#00000000</color>
+    <color name="live_red">#FF60A7</color>
+    <color name="game_title_bg">#2A2836</color>
 </resources>

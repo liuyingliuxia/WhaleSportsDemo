@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="itemview_holder" type="id" />
-    <item name="itemview_position" type="id" />
-    <item name="TAG_PRESENTER" type="id" />
-    <item name="TAG_ROOTVIEW" type="id" />
-    <item name="selected_view" type="id" />
-    <item name="rvb_banner_image_view_id" type="id" />
-</resources>

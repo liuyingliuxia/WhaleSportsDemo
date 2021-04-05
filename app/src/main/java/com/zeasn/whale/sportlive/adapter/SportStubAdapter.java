@@ -15,6 +15,7 @@ import com.lolinico.technical.open.utils.WidgetUtils;
 import com.zeasn.whale.sportlive.R;
 import com.zeasn.whale.sportlive.R2;
 import com.zeasn.whale.sportlive.bean.BaseBean;
+import com.zeasn.whale.sportlive.ui.fragment.SelectFragment;
 
 import java.util.List;
 
@@ -31,13 +32,14 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
 
     List<BaseBean> mObjectList;
     int type;
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new SportStubAdapter.ViewHolder(((Activity) parent.getContext()).getLayoutInflater().inflate(R.layout.item_sport, parent, false));
     }
 
-    public SportStubAdapter(List<BaseBean> beanList , int mType) {
+    public SportStubAdapter(List<BaseBean> beanList, int mType) {
         mObjectList = beanList;
         type = mType;
     }
@@ -45,9 +47,14 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.ivSport.setImageResource(((BaseBean)mObjectList.get(position)).getLogoResId());
-        holder.vtSportName.setText(((BaseBean)mObjectList.get(position)).getTitleName());
-        WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.120, 0.100);
+        holder.ivSport.setImageResource(((BaseBean) mObjectList.get(position)).getLogoResId());
+        holder.vtSportName.setText(((BaseBean) mObjectList.get(position)).getTitleName());
+        if (type == SelectFragment.TYPE_SELECT_SPORT)
+            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.120, 0.100);
+        if (type == SelectFragment.TYPE_SELECT_TEAM) {
+            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.100, 0.100);
+            holder.ivSport.setBackgroundResource(R.color.team_bg);
+        }
         holder.cvSports.setTag(position);
         holder.cvSports.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus)
@@ -63,6 +70,8 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
             else
                 holder.ivNike.setVisibility(View.INVISIBLE);
         });
+
+
     }
 
     @Override
