@@ -45,15 +45,22 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull GameStubAdapter.ViewHolder holder, int position) {
-        WidgetUtils.setViewParams(holder.cvGame.getContext() , holder.cvGame , 0.4 , 0.2);
+
+        WidgetUtils.setViewParams(holder.cvGame.getContext() , holder.cvGame , 0.33 , 0.146);
+        WidgetUtils.setViewParams(holder.ivTeamA.getContext() , holder.ivTeamA , 0.06 , 0.06);
+        WidgetUtils.setViewParams(holder.ivTeamB.getContext() , holder.ivTeamB , 0.06 , 0.06);
         TeamBean teamA = (TeamBean) (mObjectList.get(position).getTeamA());
         TeamBean teamB = (TeamBean) (mObjectList.get(position).getTeamB());
+        GameBean gameBean = mObjectList.get(position);
         holder.ivTeamA.setImageResource(teamA.getLogoResId());
         holder.ivTeamB.setImageResource(teamB.getLogoResId());
         holder.tvTeamA.setText(teamA.getTitleName());
         holder.tvTeamB.setText(teamB.getTitleName());
-
+        if(gameBean.getStatus()){//isLive
+            holder.tvVs.setText(holder.tvVs.getContext().getString(R.string.score_to_score , teamA.getGtScore() , teamB.getGtScore()) );
+        }
         holder.tvTimeOrScore.setText(mObjectList.get(position).getGameName());
+        holder.tvGameName.setText(holder.tvGameName.getContext().getString(R.string.game_name));
         holder.cvGame.setTag(position);
         holder.cvGame.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus)
@@ -100,6 +107,10 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
         TextView tvTeamA;
         @BindView(R.id.tvTeamB)
         TextView tvTeamB;
+        @BindView(R.id.tvGameName)
+        TextView tvGameName;
+        @BindView(R.id.tvVS)
+        TextView tvVs;
 
         @BindView(R.id.flFocusBorder)
         FrameLayout flFocusBorder;

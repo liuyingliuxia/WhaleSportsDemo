@@ -49,7 +49,6 @@ public class HomeFragment extends Fragment {
     public void initView() {
         tvAdd.findFocus();
 
-
     }
 
 
@@ -59,7 +58,7 @@ public class HomeFragment extends Fragment {
         llAddTeam.setVisibility(View.INVISIBLE);
         this.requireActivity().getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.flHomeContainer, new SelectFragment(), "Sport")
+                .replace(R.id.flHomeContainer, new GameFragment(), "Sport") //SelectFragment()
                 .commit();
     }
 

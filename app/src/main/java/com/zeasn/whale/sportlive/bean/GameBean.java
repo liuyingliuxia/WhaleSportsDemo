@@ -14,12 +14,13 @@ public class GameBean implements Serializable {
     TeamBean teamA;//主场
     TeamBean teamB;//客场
 
-    public GameBean(String mGName , TeamBean t1 , TeamBean t2 , boolean isLive){
+    public GameBean(String mGName , TeamBean t1 , TeamBean t2 , boolean isLive ){
         gameName = mGName;
         teamA = t1;
         teamB = t2;
         status = isLive;
     }
+
     public String getGameName() {
         return gameName;
     }

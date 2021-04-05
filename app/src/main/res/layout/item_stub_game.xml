@@ -32,7 +32,7 @@
                 android:paddingStart="@dimen/dp_10"
                 android:text="@string/live"
                 android:textColor="@color/live_red"
-                android:textSize="@dimen/sp_30"
+                android:textSize="@dimen/sp_20"
                 app:drawableLeftCompat="@drawable/ic_point" />
 
             <TextView
@@ -42,7 +42,7 @@
                 android:layout_weight="8"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/sp_10" />
+                android:textSize="@dimen/sp_20" />
 
             <ImageView
                 android:id="@+id/ivAlert"
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/nike_bg"
                 android:gravity="end"
-                android:visibility="invisible"
-                android:src="@mipmap/remind" />
+                android:src="@mipmap/remind"
+                android:visibility="invisible" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,22 +64,22 @@
                 android:id="@+id/ivTeamA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
                 android:background="@mipmap/team_fulham"
                 app:layout_constraintEnd_toStartOf="@id/tvVS"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvVS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/vs"
-                android:textSize="@dimen/sp_50"
                 android:textColor="@color/white"
+                android:textSize="@dimen/sp_30"
+                app:layout_constraintBottom_toTopOf="@id/tvTeamA"
                 app:layout_constraintEnd_toStartOf="@id/ivTeamB"
                 app:layout_constraintStart_toEndOf="@id/ivTeamA"
-                app:layout_constraintBottom_toTopOf="@id/tvTeamA"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -89,42 +89,45 @@
                 android:layout_height="wrap_content"
                 android:background="@mipmap/tottenham"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvVS"
                 app:layout_constraintTop_toTopOf="@id/ivTeamA"
-                app:layout_constraintVertical_bias="0.6"
-                app:layout_constraintStart_toEndOf="@id/tvVS"/>
+                app:layout_constraintVertical_bias="0.6" />
 
 
             <TextView
                 android:id="@+id/tvTeamA"
-                android:layout_width="@dimen/dp_200"
+                android:layout_width="@dimen/dp_120"
                 android:layout_height="wrap_content"
-                android:text="@string/ball_fulham"
-                android:textSize="@dimen/sp_15"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
                 android:background="@drawable/game_name_bg"
+                android:gravity="center"
+                android:text="@string/ball_fulham"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivTeamA"
                 app:layout_constraintEnd_toStartOf="@id/tvVS"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintTop_toBottomOf="@id/ivTeamA" />
+
 
             <TextView
                 android:id="@+id/tvTeamB"
+                android:layout_width="@dimen/dp_120"
                 android:layout_height="wrap_content"
-                android:layout_width="@dimen/dp_200"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/dp_30"
-                android:text="@string/ball_tottenham"
-                android:textSize="@dimen/sp_15"
-                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/dp_10"
                 android:background="@drawable/game_name_bg"
+                android:gravity="center"
+                android:text="@string/ball_tottenham"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                android:paddingTop="@dimen/dp_5"
+                android:paddingBottom="@dimen/dp_5"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivTeamB"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvVS"
-                />
+                app:layout_constraintTop_toBottomOf="@id/ivTeamB" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
