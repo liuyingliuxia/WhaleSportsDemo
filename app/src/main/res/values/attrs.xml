@@ -6,4 +6,9 @@
         <attr name="slideColor" format="color" />
         <attr name="checked" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="LocoTabLayout">
+        <attr name="tablayout_background" format="reference" />
+    </declare-styleable>
+
 </resources>

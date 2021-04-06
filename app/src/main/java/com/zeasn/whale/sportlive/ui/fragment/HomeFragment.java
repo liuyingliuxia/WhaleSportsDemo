@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
         llAddTeam.setVisibility(View.INVISIBLE);
         this.requireActivity().getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .replace(R.id.flHomeContainer, new GameFragment(), "Sport") //SelectFragment()
+                .replace(R.id.flHomeContainer, new SelectFragment(), "Sport") //SelectFragment()
                 .commit();
     }
 
