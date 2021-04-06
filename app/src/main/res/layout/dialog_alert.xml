@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_400"
     android:layout_height="wrap_content"
-    android:background="@drawable/alert_corner_bg"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="@color/game_title_bg"
-        android:gravity="center"
-        android:paddingTop="@dimen/dp_10"
-        android:paddingBottom="@dimen/dp_10"
-        android:text="@string/alert_settings"
-        android:textColor="@color/white"
-        android:textSize="@dimen/sp_20"
-        android:textStyle="bold" />
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/dp_20">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/alert_corner_bg"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="5"
-            android:background="@color/team_bg"
-            android:padding="@dimen/dp_20"
-            android:text="@string/alert_setting_content"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_15" />
-
-        <TextView
-            android:id="@+id/tvOKBtn"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/selector_button_click"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:padding="@dimen/dp_10"
-            android:paddingStart="@dimen/dp_20"
-            android:paddingEnd="@dimen/dp_20"
-            android:layout_marginBottom="@dimen/dp_20"
-            android:text="@string/ok"
-            android:textSize="@dimen/sp_10"
+            android:layout_gravity="top"
+            android:background="@color/game_title_bg"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="@string/alert_settings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:background="@color/team_bg"
+                android:padding="@dimen/dp_20"
+                android:text="@string/alert_setting_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:id="@+id/tvOKBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/selector_button_click"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/dp_10"
+                android:paddingStart="@dimen/dp_20"
+                android:paddingEnd="@dimen/dp_20"
+                android:text="@string/ok"
+                android:textSize="@dimen/sp_10"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -71,8 +71,9 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
         });
 
         holder.cvGame.setOnClickListener(v -> {
-            if (myAlertDialog == null)
+            if (myAlertDialog == null) {
                 myAlertDialog = new AlertDialog(holder.cvGame.getContext());
+            }
             if (!myAlertDialog.isShowing())
                 myAlertDialog.show();
             //点击后加上提醒

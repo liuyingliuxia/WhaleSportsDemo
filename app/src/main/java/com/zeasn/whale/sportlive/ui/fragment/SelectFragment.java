@@ -72,7 +72,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
 //                WidgetUtils.setViewParams(view.getContext(), hgSelectItem, 0.8, 0.4);
                 hgSelectItem.setHorizontalSpacing(30);
                 hgSelectItem.setNumColumns(4);
-//                hgSelectItem.setOnDispatchKeyListener(event -> {
+//                hgSelectItem.setOnKeyInterceptListener(event -> {
 //                    if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_RIGHT) {
 //                        //TODO
 //                    }
@@ -92,7 +92,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
 //                WidgetUtils.setViewParams(view.getContext(), hgSelectItem, 0.8, 0.5);
                 hgSelectItem.setHorizontalSpacing(20);
                 hgSelectItem.setNumColumns(4);
-//                hgSelectItem.setOnDispatchKeyListener(event -> {
+//                hgSelectItem.setOnKeyInterceptListener(event -> {
 //                    //TODO
 //                    return false;
 //                });
@@ -113,7 +113,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
                 hgSelectItem.setHorizontalSpacing(20);
                 hgSelectItem.setNumColumns(5);
 
-                hgSelectItem.setOnDispatchKeyListener(event -> {
+                hgSelectItem.setOnKeyInterceptListener(event -> {
                     if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
                         if (tvNextOrDone != null && tvNextOrDone.getVisibility() == View.VISIBLE) {
                             tvNextOrDone.requestFocusFromTouch();
