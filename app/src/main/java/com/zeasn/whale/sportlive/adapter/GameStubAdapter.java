@@ -15,6 +15,7 @@ import com.lolinico.technical.open.utils.WidgetUtils;
 import com.zeasn.whale.sportlive.R;
 import com.zeasn.whale.sportlive.bean.GameBean;
 import com.zeasn.whale.sportlive.bean.TeamBean;
+import com.zeasn.whale.sportlive.ui.dialog.AlertDialog;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ import butterknife.ButterKnife;
 public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHolder> {
 
     List<GameBean> mObjectList;
-//    boolean mIsLive;
+    AlertDialog myAlertDialog;
 
     @NonNull
     @Override
@@ -46,9 +47,9 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull GameStubAdapter.ViewHolder holder, int position) {
 
-        WidgetUtils.setViewParams(holder.cvGame.getContext() , holder.cvGame , 0.33 , 0.146);
-        WidgetUtils.setViewParams(holder.ivTeamA.getContext() , holder.ivTeamA , 0.06 , 0.06);
-        WidgetUtils.setViewParams(holder.ivTeamB.getContext() , holder.ivTeamB , 0.06 , 0.06);
+        WidgetUtils.setViewParams(holder.cvGame.getContext(), holder.cvGame, 0.33, 0.146);
+        WidgetUtils.setViewParams(holder.ivTeamA.getContext(), holder.ivTeamA, 0.06, 0.06);
+        WidgetUtils.setViewParams(holder.ivTeamB.getContext(), holder.ivTeamB, 0.06, 0.06);
         TeamBean teamA = (TeamBean) (mObjectList.get(position).getTeamA());
         TeamBean teamB = (TeamBean) (mObjectList.get(position).getTeamB());
         GameBean gameBean = mObjectList.get(position);
@@ -56,8 +57,8 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
         holder.ivTeamB.setImageResource(teamB.getLogoResId());
         holder.tvTeamA.setText(teamA.getTitleName());
         holder.tvTeamB.setText(teamB.getTitleName());
-        if(gameBean.getStatus()){//isLive
-            holder.tvVs.setText(holder.tvVs.getContext().getString(R.string.score_to_score , teamA.getGtScore() , teamB.getGtScore()) );
+        if (gameBean.getStatus()) {//isLive
+            holder.tvVs.setText(holder.tvVs.getContext().getString(R.string.score_to_score, teamA.getGtScore(), teamB.getGtScore()));
         }
         holder.tvTimeOrScore.setText(mObjectList.get(position).getGameName());
         holder.tvGameName.setText(holder.tvGameName.getContext().getString(R.string.game_name));
@@ -70,6 +71,10 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
         });
 
         holder.cvGame.setOnClickListener(v -> {
+            if (myAlertDialog == null)
+                myAlertDialog = new AlertDialog(holder.cvGame.getContext());
+            if (!myAlertDialog.isShowing())
+                myAlertDialog.show();
             //点击后加上提醒
             if (holder.ivAlert.getVisibility() == View.INVISIBLE)
                 holder.ivAlert.setVisibility(View.VISIBLE);
