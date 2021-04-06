@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cvSports"
+    android:id="@+id/cvTeam"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -10,23 +10,28 @@
     app:cardElevation="@dimen/dp_20">
 
     <ImageView
-        android:id="@+id/ivSport"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/football" />
+        android:id="@+id/ivTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_30"
+        android:paddingEnd="@dimen/dp_30"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_40"
+        android:background="@color/team_bg"
+        android:src="@mipmap/team_fulham" />
 
     <TextView
-        android:id="@+id/tvSportName"
+        android:id="@+id/tvTeamName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/half_black"
+        android:background="@color/half_white"
         android:gravity="center"
         android:paddingTop="@dimen/dp_5"
         android:paddingBottom="@dimen/dp_5"
         android:text="@string/tab_football"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_20" />
+        android:textSize="@dimen/sp_16" />
 
     <ImageView
         android:id="@+id/ivNike"

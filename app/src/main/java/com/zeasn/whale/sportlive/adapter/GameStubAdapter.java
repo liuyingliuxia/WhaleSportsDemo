@@ -47,7 +47,7 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull GameStubAdapter.ViewHolder holder, int position) {
 
-        WidgetUtils.setViewParams(holder.cvGame.getContext(), holder.cvGame, 0.33, 0.146);
+        WidgetUtils.setViewParams(holder.cvGame.getContext(), holder.cvGame, 0.33, 0.156);
         WidgetUtils.setViewParams(holder.ivTeamA.getContext(), holder.ivTeamA, 0.06, 0.06);
         WidgetUtils.setViewParams(holder.ivTeamB.getContext(), holder.ivTeamB, 0.06, 0.06);
         TeamBean teamA = (TeamBean) (mObjectList.get(position).getTeamA());
@@ -84,7 +84,7 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
         if ((mObjectList.get(position).getStatus()))
             holder.tvLive.setVisibility(View.VISIBLE);
         else
-            holder.tvLive.setVisibility(View.INVISIBLE);
+            holder.tvLive.setVisibility(View.GONE);
 
     }
 

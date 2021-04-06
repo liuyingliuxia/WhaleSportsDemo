@@ -16,11 +16,10 @@
         android:textColor="@color/home_tab_grey"
         android:textSize="@dimen/sp_20" />
 
-    <androidx.leanback.widget.HorizontalGridView
+    <com.zeasn.whale.sportlive.widget.SelectedAllVerticalView
         android:id="@+id/hgSelectItem"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_200"
-        android:layout_marginBottom="@dimen/dp50"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_350"
         android:layout_marginTop="@dimen/dp_20" />
 
     <TextView
@@ -28,15 +27,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:background="@drawable/selector_button_click"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:gravity="center"
         android:paddingStart="@dimen/dp_30"
         android:paddingEnd="@dimen/dp_30"
         android:paddingBottom="@dimen/dp_3"
         android:text="@string/next"
         android:textColor="@color/black"
-        android:textSize="@dimen/sp_20"/>
+        android:textSize="@dimen/sp_20" />
 
 </LinearLayout>

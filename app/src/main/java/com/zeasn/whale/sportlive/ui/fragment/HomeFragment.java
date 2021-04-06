@@ -47,8 +47,8 @@ public class HomeFragment extends Fragment {
     }
 
     public void initView() {
-        tvAdd.findFocus();
 
+        tvAdd.requestFocus();
     }
 
 

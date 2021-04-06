@@ -40,7 +40,7 @@
             android:duplicateParentState="true"
             android:focusableInTouchMode="true"
             android:text="@string/tab_football"
-            android:textColor="@color/text_sub_title"
+            android:textColor="@color/white"
             android:textSize="@dimen/sp_20" />
 
         <TextView

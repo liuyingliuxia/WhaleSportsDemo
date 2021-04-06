@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     .setReorderingAllowed(true)
                     .add(R.id.flHomeContainer, new HomeFragment(), "Home")
                     .commit();
+            ivHome.setActivated(true);
         }
     }
 
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+
         return super.onKeyDown(keyCode, event);
     }
 }

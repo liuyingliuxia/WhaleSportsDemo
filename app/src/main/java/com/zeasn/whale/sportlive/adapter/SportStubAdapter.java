@@ -32,6 +32,7 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
 
     List<BaseBean> mObjectList;
     int type;
+    View.OnClickListener itemClickListener;
 
     @NonNull
     @Override
@@ -39,22 +40,36 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
         return new SportStubAdapter.ViewHolder(((Activity) parent.getContext()).getLayoutInflater().inflate(R.layout.item_sport, parent, false));
     }
 
-    public SportStubAdapter(List<BaseBean> beanList, int mType) {
+    public SportStubAdapter(List<BaseBean> beanList, int mType, View.OnClickListener onClickListener) {
         mObjectList = beanList;
         type = mType;
+        itemClickListener = onClickListener;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        if (position != 0 && type != SelectFragment.TYPE_SELECT_TEAM || position > 2) {
+            holder.cvSports.setFocusable(false);
+            holder.cvSports.setFocusableInTouchMode(false);
+            holder.flFocusBorder.setVisibility(View.VISIBLE);
+            holder.flFocusBorder.setBackgroundColor(holder.flFocusBorder.getContext().getResources().getColor(R.color.half_black));
+        }else {
+            holder.cvSports.findFocus();
+            holder.cvSports.requestFocus();
+            holder.flFocusBorder.requestFocus();
+        }
         holder.ivSport.setImageResource(((BaseBean) mObjectList.get(position)).getLogoResId());
         holder.vtSportName.setText(((BaseBean) mObjectList.get(position)).getTitleName());
         if (type == SelectFragment.TYPE_SELECT_SPORT)
             WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.120, 0.100);
-        if (type == SelectFragment.TYPE_SELECT_TEAM) {
-            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.100, 0.100);
+        else if (type == SelectFragment.TYPE_SELECT_TEAM) {
+            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.177, 0.177);
+
             holder.ivSport.setBackgroundResource(R.color.team_bg);
+        } else if (type == SelectFragment.TYPE_SELECT_LEAGUE) {
+            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.050, 0.100);
         }
+
         holder.cvSports.setTag(position);
         holder.cvSports.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus)
@@ -63,15 +78,17 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
                 holder.flFocusBorder.setVisibility(View.INVISIBLE);
         });
 
-        holder.cvSports.setOnClickListener(v -> {
-            //加上选中框nike logo
-            if (holder.ivNike.getVisibility() == View.INVISIBLE)
-                holder.ivNike.setVisibility(View.VISIBLE);
-            else
-                holder.ivNike.setVisibility(View.INVISIBLE);
-        });
-
-
+        if (type != SelectFragment.TYPE_SELECT_TEAM) {
+            holder.cvSports.setOnClickListener(itemClickListener);
+        } else {
+            holder.cvSports.setOnClickListener(v -> {
+                //加上选中框nike logo
+                if (holder.ivNike.getVisibility() == View.INVISIBLE)
+                    holder.ivNike.setVisibility(View.VISIBLE);
+                else
+                    holder.ivNike.setVisibility(View.INVISIBLE);
+            });
+        }
     }
 
     @Override

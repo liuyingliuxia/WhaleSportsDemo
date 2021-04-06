@@ -19,13 +19,15 @@
     <TextView
         android:id="@+id/tvAdd"
         android:layout_width="@dimen/dp_150"
-        android:layout_height="@dimen/dp20"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/selector_button_click"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:background="@drawable/selector_button_click"
         android:gravity="center"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
         android:text="@string/add_favorite"
         android:textSize="@dimen/sp_16" />
 </LinearLayout>
