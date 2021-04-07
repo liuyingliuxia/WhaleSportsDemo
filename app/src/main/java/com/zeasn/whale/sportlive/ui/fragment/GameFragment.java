@@ -56,6 +56,8 @@ public class GameFragment extends Fragment {
         hgTab.setHorizontalSpacing(50);
         hgTab.setNumRows(1);
         hgTab.setAdapter(new TabStubAdapter(mTabGame));
+        hgTab.setFocusable(false);
+        hgTab.setFocusableInTouchMode(false);
 
         TeamBean mLiveTeamA = new TeamBean(R.mipmap.team_fulham, getString(R.string.team_fulham) , 1);
         TeamBean mLiveTeamB = new TeamBean(R.mipmap.tottenham, getString(R.string.ball_tottenham) , 2);
@@ -84,8 +86,8 @@ public class GameFragment extends Fragment {
         gameBeanList.add(mGame1);
         gameBeanList.add(mGame2);
         gameBeanList.add(mGame3);
-        hgFutureGame.setHorizontalSpacing(100);
-        hgFutureGame.setNumRows(1);
+        hgFutureGame.setHorizontalSpacing(50);
+        hgFutureGame.setNumRows(1); //vh
         hgFutureGame.setAdapter(new GameStubAdapter(gameBeanList));
 
     }

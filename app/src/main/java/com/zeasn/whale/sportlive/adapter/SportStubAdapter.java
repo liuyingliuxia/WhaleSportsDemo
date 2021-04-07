@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lolinico.technical.open.utils.WidgetUtils;
 import com.zeasn.whale.sportlive.R;
 import com.zeasn.whale.sportlive.R2;
 import com.zeasn.whale.sportlive.bean.BaseBean;
@@ -26,7 +25,7 @@ import butterknife.ButterKnife;
  * Author:Miracle.Lin
  * Date:2021/3/30
  * Email:miracle.lin@zeasn.com
- * Descripe: Sport League Team 三个复用
+ * Descripe: Sport League  2个复用
  */
 public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.ViewHolder> {
 
@@ -48,27 +47,26 @@ public class SportStubAdapter extends RecyclerView.Adapter<SportStubAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+//        if (type == SelectFragment.TYPE_SELECT_SPORT) {
+//            RLog.v("onBindViewHolder = TYPE_SELECT_SPORT");
+//            WidgetUtils.setViewMarginsParams(holder.cvSports.getContext(), holder.cvSports, 0.120, 0.100, 0, 0, 0, 0);
+//        } else if (type == SelectFragment.TYPE_SELECT_LEAGUE) {
+//            RLog.v("onBindViewHolder = TYPE_SELECT_LEAGUE");
+//            WidgetUtils.setViewMarginsParams(holder.cvSports.getContext(), holder.cvSports, 0.050, 0.100, 0, 0, 0, 0);
+//        }
+
         if (position != 0 && type != SelectFragment.TYPE_SELECT_TEAM || position > 2) {
             holder.cvSports.setFocusable(false);
             holder.cvSports.setFocusableInTouchMode(false);
             holder.flFocusBorder.setVisibility(View.VISIBLE);
             holder.flFocusBorder.setBackgroundColor(holder.flFocusBorder.getContext().getResources().getColor(R.color.half_black));
-        }else {
+        } else {
             holder.cvSports.findFocus();
             holder.cvSports.requestFocus();
             holder.flFocusBorder.requestFocus();
         }
         holder.ivSport.setImageResource(((BaseBean) mObjectList.get(position)).getLogoResId());
         holder.vtSportName.setText(((BaseBean) mObjectList.get(position)).getTitleName());
-        if (type == SelectFragment.TYPE_SELECT_SPORT)
-            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.120, 0.100);
-        else if (type == SelectFragment.TYPE_SELECT_TEAM) {
-            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.177, 0.177);
-
-            holder.ivSport.setBackgroundResource(R.color.team_bg);
-        } else if (type == SelectFragment.TYPE_SELECT_LEAGUE) {
-            WidgetUtils.setViewParams(holder.cvSports.getContext(), holder.cvSports, 0.050, 0.100);
-        }
 
         holder.cvSports.setTag(position);
         holder.cvSports.setOnFocusChangeListener((v, hasFocus) -> {

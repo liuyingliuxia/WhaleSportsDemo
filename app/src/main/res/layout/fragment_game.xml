@@ -14,8 +14,8 @@
         android:id="@+id/hgTab"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_20"
-        app:focusOutEnd="true"
-        app:focusOutFront="true">
+        android:focusableInTouchMode="false"
+        android:focusable="false">
 
     </androidx.leanback.widget.HorizontalGridView>
 

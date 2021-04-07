@@ -71,7 +71,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
                     baseBeanList.add(new SportBean(resIntSport[i], mSports[i]));
                 }
 //                WidgetUtils.setViewParams(view.getContext(), hgSelectItem, 0.8, 0.4);
-                hgSelectItem.setHorizontalSpacing(30);
+//                hgSelectItem.setHorizontalSpacing(20);
                 hgSelectItem.setNumColumns(4);
 
                 hgSelectItem.setAdapter(new SportStubAdapter(baseBeanList, TYPE_SELECT_SPORT, onClickListener));
@@ -86,9 +86,8 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
                     baseBeanList.add(new LeagueBean(resIntLeague[i], mLeagueStr[i]));
                 }
 //                WidgetUtils.setViewParams(view.getContext(), hgSelectItem, 0.8, 0.5);
-                hgSelectItem.setHorizontalSpacing(20);
+//                hgSelectItem.setHorizontalSpacing(20);
                 hgSelectItem.setNumColumns(4);
-
                 hgSelectItem.setAdapter(new SportStubAdapter(baseBeanList, TYPE_SELECT_LEAGUE, onClickListener));
                 break;
             }

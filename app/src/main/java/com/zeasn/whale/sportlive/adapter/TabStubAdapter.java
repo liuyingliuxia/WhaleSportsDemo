@@ -36,18 +36,21 @@ public class TabStubAdapter extends RecyclerView.Adapter<TabStubAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull TabStubAdapter.ViewHolder holder, int position) {
         holder.tvTab.setText(mObjectList[position]);
-        if (position != 2)
-            holder.tvTab.setOnFocusChangeListener((v, hasFocus) -> {
-                if (hasFocus) {
-                    holder.tvTab.setTextColor(v.getContext().getResources().getColor(R.color.white));
-                } else
-                    holder.tvTab.setTextColor(v.getContext().getResources().getColor(R.color.text_sub_title));
-            });
-
-        else {
-            holder.tvTab.setFocusableInTouchMode(false);
-            holder.tvTab.setFocusable(false);
+        if(position == 1){
+            holder.tvTab.setTextColor(holder.tvTab.getContext().getResources().getColor(R.color.white));
         }
+//        if (position != 2)
+//            holder.tvTab.setOnFocusChangeListener((v, hasFocus) -> {
+//                if (hasFocus) {
+//                    holder.tvTab.setTextColor(v.getContext().getResources().getColor(R.color.white));
+//                } else
+//                    holder.tvTab.setTextColor(v.getContext().getResources().getColor(R.color.text_sub_title));
+//            });
+//
+//        else {
+//            holder.tvTab.setFocusableInTouchMode(false);
+//            holder.tvTab.setFocusable(false);
+//        }
     }
 
     @Override

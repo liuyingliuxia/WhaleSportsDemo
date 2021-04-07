@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvGame"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     app:cardCornerRadius="@dimen/dp_10"
@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/tvTimeOrScore"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
                 android:gravity="center"
@@ -57,14 +57,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/conTeamAB"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/team_bg">
 
             <ImageView
                 android:id="@+id/ivTeamA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_10"
                 android:background="@mipmap/team_fulham"
                 app:layout_constraintEnd_toStartOf="@id/tvVS"
                 app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +138,7 @@
         android:id="@+id/flFocusBorder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/dp_3"
         android:background="@drawable/checked_border"
         android:visibility="invisible" />
 
