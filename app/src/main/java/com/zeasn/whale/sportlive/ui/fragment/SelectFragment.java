@@ -59,6 +59,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
         unbinder = ButterKnife.bind(this, view);
         //根据传过来的 tag 展示相应的页面
         assert this.getTag() != null;
+        hgSelectItem.requestFocus();
         switch (this.getTag()) {
             case "Sport":
                 tvSelectWord.setText(R.string.select_sports);
@@ -72,12 +73,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
 //                WidgetUtils.setViewParams(view.getContext(), hgSelectItem, 0.8, 0.4);
                 hgSelectItem.setHorizontalSpacing(30);
                 hgSelectItem.setNumColumns(4);
-//                hgSelectItem.setOnKeyInterceptListener(event -> {
-//                    if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_RIGHT) {
-//                        //TODO
-//                    }
-//                    return false;
-//                });
+
                 hgSelectItem.setAdapter(new SportStubAdapter(baseBeanList, TYPE_SELECT_SPORT, onClickListener));
                 break;
             case "League": {
@@ -92,10 +88,7 @@ public class SelectFragment extends Fragment implements SelectedAllVerticalView.
 //                WidgetUtils.setViewParams(view.getContext(), hgSelectItem, 0.8, 0.5);
                 hgSelectItem.setHorizontalSpacing(20);
                 hgSelectItem.setNumColumns(4);
-//                hgSelectItem.setOnKeyInterceptListener(event -> {
-//                    //TODO
-//                    return false;
-//                });
+
                 hgSelectItem.setAdapter(new SportStubAdapter(baseBeanList, TYPE_SELECT_LEAGUE, onClickListener));
                 break;
             }

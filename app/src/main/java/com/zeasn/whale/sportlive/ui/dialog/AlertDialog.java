@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- *
+ * @deprecated
  */
 public class AlertDialog extends Dialog {
     @BindView(R.id.tvOKBtn)

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingStart="@dimen/dp10"
+    android:paddingStart="@dimen/dp_10"
     android:paddingTop="@dimen/dp_20"
     tools:ignore="RtlSymmetry">
 
@@ -19,7 +19,7 @@
     <com.zeasn.whale.sportlive.widget.SelectedAllVerticalView
         android:id="@+id/hgSelectItem"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_350"
+        android:layout_height="@dimen/dp_320"
         android:layout_marginTop="@dimen/dp_20" />
 
     <TextView

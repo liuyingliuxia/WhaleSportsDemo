@@ -2,7 +2,6 @@ package com.zeasn.whale.sportlive.ui.fragment;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,9 +12,9 @@ import androidx.leanback.widget.HorizontalGridView;
 import com.zeasn.whale.sportlive.R;
 import com.zeasn.whale.sportlive.SportApplication;
 import com.zeasn.whale.sportlive.adapter.GameStubAdapter;
+import com.zeasn.whale.sportlive.adapter.TabStubAdapter;
 import com.zeasn.whale.sportlive.bean.GameBean;
 import com.zeasn.whale.sportlive.bean.TeamBean;
-import com.zeasn.whale.sportlive.util.RLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,18 +31,13 @@ import butterknife.Unbinder;
  */
 public class GameFragment extends Fragment {
     Unbinder unbinder;
-    @BindView(R.id.tabGameSport)
-    LinearLayout tabGameSport;
+    @BindView(R.id.hgTab)
+    HorizontalGridView hgTab;
     @BindView(R.id.hgStartGame)
     HorizontalGridView hgStartGame;
     @BindView(R.id.hgFutureGame)
     HorizontalGridView hgFutureGame;
-    @BindView(R.id.tabItem1)
-    TextView tabItem1;
-    @BindView(R.id.tabItem2)
-    TextView tabItem2;
-    @BindView(R.id.tabItem3)
-    TextView tabItem3;
+
 
     String[] mTabGame;
     private List<GameBean> gameBeanList = new ArrayList<>();
@@ -59,32 +53,15 @@ public class GameFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         unbinder = ButterKnife.bind(this, view);
         mTabGame = SportApplication.getInstance().getResources().getStringArray(R.array.tab_game);
-        for (int i = 0; i < tabItemList.size(); i++) {
-            tabItemList.add(tabItem1);
-            tabItemList.add(tabItem2);
-            tabItemList.add(tabItem3);
-        }
-        for (TextView tabItem : tabItemList) {
-            tabItem.setFocusable(true);
-            tabItem.setFocusableInTouchMode(true);
-            tabItem.setOnFocusChangeListener((v, hasFocus) -> {
-                RLog.v("GameFragment tabItem hasFocus== " + hasFocus);
-                if (hasFocus)
-                    tabItem.setBackgroundColor(v.getContext().getResources().getColor(R.color.white));
-                else
-                    tabItem.setBackgroundColor(v.getContext().getResources().getColor(R.color.text_sub_title));
-            });
-        }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
+        hgTab.setHorizontalSpacing(50);
+        hgTab.setNumRows(1);
+        hgTab.setAdapter(new TabStubAdapter(mTabGame));
 
         TeamBean mLiveTeamA = new TeamBean(R.mipmap.team_fulham, getString(R.string.team_fulham) , 1);
         TeamBean mLiveTeamB = new TeamBean(R.mipmap.tottenham, getString(R.string.ball_tottenham) , 2);
         GameBean mLiveGame = new GameBean(getString(R.string.live_score), mLiveTeamA, mLiveTeamB, true);
         gameLiveList.add(mLiveGame);
+        hgStartGame.requestFocus();
         //已经开始的比赛
         hgStartGame.setHorizontalSpacing(100);
         hgStartGame.setNumRows(1);
@@ -111,6 +88,11 @@ public class GameFragment extends Fragment {
         hgFutureGame.setNumRows(1);
         hgFutureGame.setAdapter(new GameStubAdapter(gameBeanList));
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override

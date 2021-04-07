@@ -4,64 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_bg"
     android:orientation="vertical"
-    android:paddingStart="@dimen/dp10"
-    android:paddingTop="@dimen/dp_20"
+    android:paddingStart="@dimen/dp_10"
+    android:paddingTop="@dimen/dp_10"
     tools:ignore="RtlSymmetry">
 
-    <LinearLayout
-        android:id="@+id/tabGameSport"
+    <androidx.leanback.widget.HorizontalGridView
+        android:id="@+id/hgTab"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
+        android:layout_height="@dimen/dp_20"
+        app:focusOutEnd="true"
+        app:focusOutFront="true">
 
-        <TextView
-            android:id="@+id/tabItem1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:focusable="true"
-            android:textStyle="bold"
-            android:focusableInTouchMode="true"
-            android:duplicateParentState="true"
-            android:text="@string/tab_all"
-            android:textColor="@color/text_sub_title"
-            android:textSize="@dimen/sp_20" />
-
-        <TextView
-            android:id="@+id/tabItem2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:focusable="true"
-            android:textStyle="bold"
-            android:duplicateParentState="true"
-            android:focusableInTouchMode="true"
-            android:text="@string/tab_football"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_20" />
-
-        <TextView
-            android:id="@+id/tabItem3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="@string/tab_basketball"
-            android:textColor="@color/text_sub_title"
-            android:textSize="@dimen/sp_20" />
-
-    </LinearLayout>
+    </androidx.leanback.widget.HorizontalGridView>
 
     <androidx.leanback.widget.HorizontalGridView
         android:id="@+id/hgStartGame"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/dp_10"
+        app:focusOutEnd="true"
+        app:focusOutFront="true"
         android:layout_weight="3" />
 
     <androidx.leanback.widget.HorizontalGridView
@@ -69,6 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/dp_10"
+        app:focusOutEnd="true"
+        app:focusOutFront="true"
         android:layout_weight="4" />
 
 </LinearLayout>

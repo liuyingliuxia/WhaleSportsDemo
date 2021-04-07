@@ -1,6 +1,7 @@
 package com.zeasn.whale.sportlive.adapter;
 
 import android.app.Activity;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -15,12 +16,14 @@ import com.lolinico.technical.open.utils.WidgetUtils;
 import com.zeasn.whale.sportlive.R;
 import com.zeasn.whale.sportlive.bean.GameBean;
 import com.zeasn.whale.sportlive.bean.TeamBean;
-import com.zeasn.whale.sportlive.ui.dialog.AlertDialog;
+import com.zeasn.whale.sportlive.ui.dialog.GameAlertDialogBasePopUp;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import razerdp.basepopup.QuickPopupBuilder;
+import razerdp.basepopup.QuickPopupConfig;
 
 /**
  * Author:Miracle.Lin
@@ -31,7 +34,7 @@ import butterknife.ButterKnife;
 public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHolder> {
 
     List<GameBean> mObjectList;
-    AlertDialog myAlertDialog;
+    GameAlertDialogBasePopUp myAlertDialog;
 
     @NonNull
     @Override
@@ -71,16 +74,33 @@ public class GameStubAdapter extends RecyclerView.Adapter<GameStubAdapter.ViewHo
         });
 
         holder.cvGame.setOnClickListener(v -> {
-            if (myAlertDialog == null) {
-                myAlertDialog = new AlertDialog(holder.cvGame.getContext());
-            }
-            if (!myAlertDialog.isShowing())
-                myAlertDialog.show();
-            //点击后加上提醒
-            if (holder.ivAlert.getVisibility() == View.INVISIBLE)
-                holder.ivAlert.setVisibility(View.VISIBLE);
-            else
-                holder.ivAlert.setVisibility(View.INVISIBLE);
+//            if (myAlertDialog == null) {
+//                myAlertDialog = new GameAlertDialogBasePopUp(holder.cvGame.getContext());
+//                myAlertDialog.setBlurBackgroundEnable(true);
+//                myAlertDialog.showPopupWindow(Gravity.CENTER);
+//            }
+            QuickPopupBuilder.with(holder.cvGame.getContext())
+                    .contentView(R.layout.dialog_alert)
+                    .config(new QuickPopupConfig()
+                            .gravity(Gravity.CENTER)
+                            .backpressEnable(false)
+                            .blurBackground(true)
+                            .withClick(R.id.tvOKBtn, new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                }
+                            }))
+                    .show();
+            holder.cvGame.postDelayed(() -> {
+                // 点击后加上提醒
+                if (holder.ivAlert.getVisibility() == View.INVISIBLE)
+                    holder.ivAlert.setVisibility(View.VISIBLE);
+                else
+                    holder.ivAlert.setVisibility(View.INVISIBLE);
+            }, 1000);
+
+
         });
         if ((mObjectList.get(position).getStatus()))
             holder.tvLive.setVisibility(View.VISIBLE);
